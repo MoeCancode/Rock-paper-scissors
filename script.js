@@ -1,13 +1,9 @@
-
 var result = "";
 var compScore= 0;
 var userScore = 0;
 var Ties = 0
 
-
-
 function game(){
-
   var userChoice = prompt("please input r, p, or s", "r,p,s");
   userChoice=userChoice.toLowerCase();
 
@@ -29,21 +25,21 @@ function game(){
       result = "It's a Tie"
       Ties= Ties +1
     }
-    else if ((u==="r" && c ==="p")||(u==="p" && c ==="s")||(u==="s" && c ==="r")){
+    else if ((u==="r" && c ==="p") || (u==="p" && c ==="s") || (u==="s" && c ==="r")){
       result = "Computer Wins!!"
       compScore +=1
     }
-    else if ((c==="r" && u ==="p")||(c==="p" && u ==="s")||(c==="s" && u ==="r")){
+    else if ((c==="r" && u ==="p") || (c==="p" && u ==="s") || (c==="s" && u ==="r")){
       result = "You Win!!"
       userScore +=1
     }
     alert(result)
   }
 
-  var displayScore = "Computer Score: " + compScore +"\n User Score: " + userScore + "\n Ties: " + Ties
+  var displayScore = "Computer Score: " + compScore +"\nUser Score: " + userScore + "\nTies: " + Ties
   alert(displayScore)
   var again = confirm("do you want to play again")
-  if (again != false){
+  if (again){
     game()
   }else {return}
 }
